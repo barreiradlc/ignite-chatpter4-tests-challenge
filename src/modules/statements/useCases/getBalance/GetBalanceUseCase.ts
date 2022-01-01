@@ -17,11 +17,11 @@ interface IResponse {
 @injectable()
 export class GetBalanceUseCase {
   constructor(
-    @inject('StatementsRepository')
-    private statementsRepository: IStatementsRepository,
-
     @inject('UsersRepository')
     private usersRepository: IUsersRepository,
+
+    @inject('StatementsRepository')
+    private statementsRepository: IStatementsRepository,
   ) {}
 
   async execute({ user_id }: IRequest): Promise<IResponse> {
